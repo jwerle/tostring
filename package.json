@@ -1,0 +1,17 @@
+{
+  "name": "tostring",
+  "version": "0.0.1",
+  "description": "Transform stdin strings",
+  "author": "Joseph Werle",
+  "license": "MIT",
+  "keywords": [ "toString", "transform" ],
+  "main": "index.js",
+  "preferGlobal": true,
+  "scripts": { "test": "make test" },
+  "dependencies": { "through": "^2.3.4" },
+  "bin": {
+    "tostring": "./bin/to-string",
+    "to-string": "./bin/to-string",
+    "to-s": "./bin/to-string"
+  }
+}
