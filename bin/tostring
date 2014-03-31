@@ -104,7 +104,9 @@ void function main () {
     fprintf(stderr, "error: expecting buffer type\n");
     usage();
     exit(1);
-  } else if (['-h', '--help'].indexOf(type) > -1) {
+  } else if ('binary' == type) {
+    fprintf(stderr, "error: use of binary buffer types is illegal\n");
+    exit(1);
   } else try {
     // test type
     Buffer('noop').toString(type);

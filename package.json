@@ -10,8 +10,8 @@
   "scripts": { "test": "make test" },
   "dependencies": { "through": "^2.3.4" },
   "bin": {
-    "tostring": "./bin/to-string",
-    "to-string": "./bin/to-string",
-    "to-s": "./bin/to-string"
+    "tostring": "./bin/tostring",
+    "tostring": "./bin/tostring",
+    "to-s": "./bin/tostring"
   }
 }

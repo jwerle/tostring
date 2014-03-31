@@ -21,7 +21,18 @@ module.exports = to;
 function to (type, opts) {
   opts = opts || {};
   return through(function (chunk) {
-    this.push(Buffer(chunk).toString(type));
+    var buf = null;
+    var tmp = Buffer(chunk.length);
+    var len = tmp.write(String(chunk), 0);
+    // hackery
+    switch (type) {
+      case 'utf8':
+      case 'utf-8':
+        buf = Buffer(JSON.parse('"'+ tmp.toString(type, 0, len) +'"'));
+        break;
+      default: buf = Buffer(tmp);
+    }
+    this.push(buf.toString(type));
     opts.newline && this.push('\n');
   });
 }
